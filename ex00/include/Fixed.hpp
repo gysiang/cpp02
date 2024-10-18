@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 12:48:49 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/10/18 13:08:41 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/10/18 13:24:18 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ class	Fixed
 		~Fixed();
 		Fixed(const	Fixed &a);
 		Fixed &operator = (const Fixed &a);
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
 };
 
 #endif

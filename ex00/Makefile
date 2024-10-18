@@ -1,28 +1,36 @@
 CC = g++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++11
+CFLAGS = -Wall -Wextra -Werror -std=c++11 -I include
 
-TARGET = ex00
+TARGET = a.out
 
-SRCS = main.cpp \
-		Fixed.cpp
+# Define source and object directories
+SRC_DIR = src
+OBJ_DIR = obj
 
-OBJS = $(SRCS:.cpp=.o)
+# Automatically get all .cpp files in the source directory
+SRCS = $(wildcard $(SRC_DIR)/*.cpp)
 
-all: $(TARGET)
+# Generate object file names from source files
+OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRCS))
+
+all: $(OBJ_DIR) $(TARGET)
+
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
 
 $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
 
-%.o: %.cpp
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
 
-fclean :
-	rm -f $(OBJS) $(TARGET)
+fclean: clean
+	rm -f $(TARGET)
 
 re: fclean all
 
-.PHONY: all clean
+.PHONY: all clean fclean re
