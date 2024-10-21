@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:26:49 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/10/21 18:25:44 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/10/21 22:31:44 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ class Point
 		//getter
 		const Fixed &getX() const;
 		const Fixed &getY() const;
-
 };
+
+bool	bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:24:55 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/10/21 22:08:53 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/10/22 01:00:54 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,19 @@
 
 static float	area(const Point a, const Point b, const Point c)
 {
-	// Area = [x1(y2 - y3) + x2(y3 - y1) + x3(y1-y2)] / 2
 	float	area;
 
-	area = abs((a.getX().toFloat() * (b.getY().toFloat() - c.getY().toFloat()))
-	+ (b.getX().toFloat() * (c.getY().toFloat() - a.getY().toFloat()))
-	+ (c.getX().toFloat() * (a.getY().toFloat() - b.getY().toFloat())) / 2);
-	return (area);
+	area = (
+		(a.getX().toFloat() * (b.getY().toFloat() - c.getY().toFloat()))
+		+ (b.getX().toFloat() * (c.getY().toFloat() - a.getY().toFloat()))
+		+ (c.getX().toFloat() * (a.getY().toFloat() - b.getY().toFloat()))
+	) / 2.0f;
+	return (fabs(area));
 }
 
 bool	bsp(Point const a, Point const b, Point const c, Point const point)
 {
-	float	d0, d1, d2, d2, d3;
+	float	d0, d1, d2, d3;
 	bool	result = false;
 
 	d0 = area(a, b, c);
