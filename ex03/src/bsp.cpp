@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:24:55 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/10/22 01:00:54 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/10/28 21:30:43 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static float	area(const Point a, const Point b, const Point c)
 		+ (b.getX().toFloat() * (c.getY().toFloat() - a.getY().toFloat()))
 		+ (c.getX().toFloat() * (a.getY().toFloat() - b.getY().toFloat()))
 	) / 2.0f;
-	return (fabs(area));
+	return (abs(area));
 }
 
 bool	bsp(Point const a, Point const b, Point const c, Point const point)
