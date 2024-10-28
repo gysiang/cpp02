@@ -1,6 +1,6 @@
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++11 -I include
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -I include
 
 TARGET = a.out
 
